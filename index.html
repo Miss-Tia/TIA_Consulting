@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TIA Consulting</title>
+  <!-- Font Awesome for social icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header class="navbar">
+  <div class="nav-container">
+    <img src="assets/Logo_transparent.png" alt="TIA Consulting Logo" class="nav-logo">
+    
+    <button class="nav-toggle" aria-label="toggle navigation">
+      ☰
+    </button>
+    
+    <nav class="nav-menu">
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#clients">Clients</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+  <section class="hero fade">
+    <img src="assets/logo_nohead_transparent.png" alt="TIA Consulting Logo" class="hero-logo">
+    <h3 class="gold-gradient-light">Aligning technology and insight to create meaningful impact.</h3>
+    <div>
+      <a href="#" class="btn btn-primary">Work With TIA</a>
+      <a href="#services" class="btn btn-outline">Learn More</a>
+    </div>
+  </section>
+
+  <section id="about" class="section fade">
+  <div class="about-container">
+    <div class="about-text">
+      <h2 class="gold-gradient">Need Tech Help? Get It Done Right!</h2>
+      <p>
+        TIA Consulting delivers technology solutions with precision and peace of mind. 
+        Our focus on insight and alignment allows organizations to thrive in a connected world.
+        We empower teams through strategy, technology, and aligned execution — bridging the gap
+        between business goals and technical implementation.
+      </p>
+      <a href="#" class="btn btn-secondary">More about TIA</a>
+      
+    </div>
+
+    <div class="about-image">
+      <img src="assets/Tia_braids.jpeg" alt="Tia working with clients" />
+    </div>
+  </div>
+</section>
+
+  <section id="services" class="section fade">
+  <div class="services-container">
+    <div class="services-text">
+      <h2 class="gold-gradient">My Services</h2>
+      <p class="services-intro">
+        At TIA Consulting, we specialize in blending technology and insight to create alignment between your business goals and your digital tools. Our core services include:
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card fade">
+        <h3 class="gold-gradient">IT Consulting</h3>
+        <p>Aligning your technology stack with your long-term business vision.</p>
+      </div>
+      <div class="service-card fade">
+        <h3 class="gold-gradient">Web Development</h3>
+        <p>Modern, performant websites and apps that engage users and drive results.</p>
+      </div>
+      <div class="service-card fade">
+        <h3 class="gold-gradient">Automation Solutions</h3>
+        <p>Streamlining operations with smart, efficient automation tools.</p>
+      </div>
+      <div class="service-card fade">
+        <h3 class="gold-gradient">NationBuilder Consulting</h3>
+        <p>Expert setup, theme customization, and strategic growth solutions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="clients" class="section fade">
+  <div class="clients-container">
+    <div class="clients-grid">
+      <div class="client-card">
+        <img src="assets/RPC_transparent.png" alt="Rainbow PUSH Coalition">
+      </div>
+      <div class="client-card">
+        <img src="assets/SCEC_transparent.png" alt="Sunshine Coast Environment Council">
+      </div>
+      <div class="client-card">
+        <img src="assets/BIFLA_transparent.png" alt="Black Infants and Families Los Angeles">
+      </div>
+    <div class="client-card">
+        <img src="assets/toma_logo_bigger.png" alt="TOMA Tribal Outreach">
+    </div>
+</div>
+    <div class="clients-text">
+      <h2 class="gold-gradient-deep">Organizations I've Worked With</h2>
+      <p>
+        We’ve had the privilege of collaborating with mission-driven organizations 
+        that use technology as a force for good. Each partnership reflects our 
+        commitment to alignment, strategy, and meaningful digital transformation.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+ <footer>
+  <div class="footer-content">
+    <img src="assets/Logo_transparent.png" alt="TIA Consulting Logo" class="footer-logo">
+
+    <p class="copyright">
+      &copy; <span id="year"></span> TIA Consulting. Technology. Insight. Alignment.
+    </p>
+
+    <div class="footer-socials">
+  <a href="https://www.linkedin.com/in/andietia" target="_blank" aria-label="LinkedIn" class="linkedin-link">
+    <i class="fab fa-linkedin"></i>
+    <span class="tooltip">Connect with Tia on LinkedIn</span>
+  </a>
+
+      <!-- Optional Facebook -->
+      <!-- <a href="https://www.facebook.com/yourprofile" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook"></i>
+      </a> -->
+    </div>
+  </div>
+</footer>
+
+
+  <script src="js/main.js"></script>
+  <script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
