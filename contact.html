@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body>
+<body class="contact-page">
 
   <!-- NAVBAR -->
   <header class="navbar">
@@ -32,7 +32,7 @@
           <li><a href="index.html#about">About</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="index.html#clients">Clients</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -42,7 +42,7 @@
   <section class="page-hero">
     <h1 class="gold-gradient">Contact</h1>
     <p class="page-hero-sub">
-      Book a consultation, or send me a message Either way, we’ll keep it clear, calm, and practical. This is the right place to start getting your tech in order!
+      Book a consultation or send a message. Either way, we’ll keep it clear, calm, and practical. You're in the right place to get tech done right.
     </p>
   </section>
 
@@ -50,23 +50,25 @@
   <section class="page-section light" id="booking" style="text-align: center;">
     <div class="services-details-wrap">
       <h2 class="gold-gradient">Book a Consultation</h2>
-      <p>If you’d like to talk live, grab a time that works for you.</p>
+      <p>If you’d like to talk live and discuss your goals, grab a time that works for you.</p>
 
-     
-      <div class="calendly-inline-widget" data-url="https://calendly.com/tia-nationbuilder/consultation?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=E8AE00" style="min-width:520px;height:700px;"></div>
+      <!-- Calendly inline widget begin -->
+      <div class="calendly-wrap">
+        <div class="calendly-inline-widget" data-url="https://calendly.com/tia-nationbuilder/consultation?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=e3ce16" style="min-width:320px;height:700px;"></div>
+      </div>
       <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-    
+      <!-- Calendly inline widget end -->
     </div>
   </section>
 
   <!-- MESSAGE FORM (BOTTOM) -->
   <section class="page-section dark" id="message" style="text-align: center;">
     <h2 class="gold-gradient">Send a Message</h2>
-    <p>If booking a consultation isn’t your thing, send a note and I’ll reply soon.</p>
+    <p>If booking isn’t your thing, send a note and I’ll reply soon.</p>
 
     <div class="services-details-wrap contact-wrap">
       <form
-        action="https://formspree.io/f/xpwvnzjd"
+        action="https://formspree.io/f/YOUR_FORM_ID"
         method="POST"
         class="contact-form"
       >
@@ -99,6 +101,7 @@
           </div>
         </div>
       </form>
+
     </div>
   </section>
 
