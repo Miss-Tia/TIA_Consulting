@@ -71,20 +71,31 @@
       </p>
     </div>
 
-    <!-- RIGHT COLUMN: tiles + hint/link live together -->
+    
     <div class="services-right">
       <div class="services-grid">
-        <div class="service-card fade">
+        <div class="service-card fade"
+        role="link"
+        tabindex="0"
+        data-href="services.html#it-consulting"
+        >
           <h3 class="gold-gradient">IT Consulting</h3>
           <p>Aligning your technology stack with your long-term business vision.</p>
         </div>
 
-        <div class="service-card fade">
+        <div class="service-card fade"
+        role="link"
+        tabindex="0"
+        data-href="services.html#web-development"
+        >
           <h3 class="gold-gradient">Web Development</h3>
           <p>Modern, performant websites and apps that engage users and drive results.</p>
         </div>
 
-        <div class="service-card fade">
+        <div class="service-card fade"
+        role="link"
+        tabindex="0"
+        data-href="services.html#automation">
           <h3 class="gold-gradient">Automation Solutions</h3>
           <p>Streamlining operations with smart, efficient automation tools.</p>
         </div>
@@ -158,6 +169,21 @@
   <script src="js/main.js"></script>
   <script>
   document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+<script>
+  document.querySelectorAll(".service-card[data-href]").forEach(card => {
+    const go = () => (window.location.href = card.dataset.href);
+
+    card.addEventListener("click", go);
+
+    // Keyboard support (Enter/Space)
+    card.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        go();
+      }
+    });
+  });
 </script>
 
 </body>

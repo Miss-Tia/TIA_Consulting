@@ -96,6 +96,9 @@ body {
   justify-content: center;
   align-items: center;
 }
+.navbar {
+  height: 90px;
+}
 
 .nav-container {
   width: 100%;
@@ -110,8 +113,11 @@ body {
 .nav-logo {
   position: absolute;
   left: 40px;
-  height: 80px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 70px;
 }
+
 
 .nav-menu {
   display: flex;
@@ -162,6 +168,19 @@ body {
     height: 60px;
   }
 }
+@media (max-width: 768px) {
+  .nav-logo {
+    position: static;
+    height: 60px;
+
+    transform: none;
+    top: auto;
+    left: auto;
+
+    width: auto;
+    display: block;
+  }
+}
 
 /* HERO */
 .hero {
@@ -179,6 +198,20 @@ body {
 }
 
 .hero-logo { height: 200px; }
+
+.page-hero {
+  background: var(--black);
+  padding: 95px 20px 55px; /* smaller than homepage hero */
+  text-align: center;
+}
+
+.page-hero-sub {
+  max-width: 800px;
+  margin: 18px auto 28px;
+  color: var(--gray);
+  font-size: 18px;
+  line-height: 1.7;
+}
 
 /* TYPOGRAPHY */
 h1, h2, h3, h4 {
@@ -354,10 +387,216 @@ p { color: var(--gray); font-size: 18px; }
 #contact h2 {
   color: var(--black);
 }
+ /*Services page sections*/
+.page-section {
+  padding: 60px 0;
+}
 
+.page-section.light {
+  background: var(--warm-cream);
+  color: var(--black);
+}
+
+.page-section.light p {
+  color: #333;
+}
+
+.page-section.dark {
+  background: var(--black);
+  color: var(--white);
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.page-section.dark p {
+  color: var(--gray);
+}
+
+.services-details-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Remove accent line from "What I Offer" header */
+.services-text::before,
+.services-text h2::before {
+  content: none !important;
+  display: none !important;
+}
+
+.service-detail {
+  background: rgba(255,255,255,0.6);
+  border-radius: 14px;
+  padding: 40px;
+  margin-bottom: 32px;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.service-detail h2 {
+  margin-top: 0;
+  font-size: 36px;
+  color: var(--black);
+}
+
+.service-summary {
+  margin-bottom: 22px;
+  color: #333;
+  font-size: 18px;
+}
+
+.service-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.service-detail-grid h3 {
+  color: var(--gold-deep);
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.service-detail-grid ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.service-detail-grid li {
+  margin-bottom: 8px;
+  color: #333;
+}
+/* === Services page polish: stagger + accents === */
+
+.service-detail {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Accent stripe (left by default) */
+.service-detail::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  bottom: 18px;
+  left: 18px;
+  width: 4px;
+  border-radius: 3px;
+  background: linear-gradient(to bottom, var(--gold-light), var(--gold-deep));
+  opacity: 0.85;
+}
+
+/* Staggered layout: nudge the card so it doesn't feel stacked */
+#services-list .service-detail {
+  max-width: 1050px;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* Alternate cards shift right + flip stripe to the right */
+#services-list .service-detail--alt {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+#services-list .service-detail--alt::before {
+  left: auto;
+  right: 18px;
+}
+
+#services-list .service-detail--alt {
+  background: rgba(255,255,255,0.72);
+}
+
+#services-list .service-detail + .service-detail {
+  margin-top: 34px;
+}
+
+.services-mini-cta {
+  display: inline-flex;           /* shrink to content */
+  align-items: center;
+  gap: 10px;
+  color: var(--gold-deep);
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 6px;            /* space for underline */
+  width: fit-content;             /* extra safety */
+}
+
+.services-mini-cta:hover {
+  border-bottom-color: currentColor;
+}
+
+
+@media (max-width: 900px) {
+  #services-list .service-detail,
+  #services-list .service-detail--alt {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+  }
+
+  #services-list .service-detail::before,
+  #services-list .service-detail--alt::before {
+    left: 18px;
+    right: auto;
+  }
+}
+
+
+@media (max-width: 900px) {
+  .service-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-details-wrap {
+    padding: 0 20px;
+  }
+
+  .service-detail {
+    padding: 30px;
+  }
+}
 
 .section:not(:last-child) {
   border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+/* HOW I WORK SECTION */
+.how-work-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.how-work-media img {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 14px;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.how-work-text p {
+  color: #333;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 900px) {
+  .how-work-wrap {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .how-work-media img {
+    margin: 0 auto;
+    max-width: 420px;
+  }
 }
 
 /* BUTTONS */
@@ -893,4 +1132,385 @@ footer p {
   h3 { font-size: 24px; }
   p { font-size: 15px; }
   .section { padding: 60px 0; }
+}
+/* 1) Don't let global/mobile .btn rules mess up page CTAs */
+@media (max-width: 768px) {
+  /* Keep your global .btn behavior if you like it elsewhere… */
+  /* BUT make Services page hero CTA behave nicely */
+  .page-hero .btn {
+    display: inline-block;
+    width: auto;
+    margin: 18px auto 0;
+  }
+}
+
+/* 2) Remove accent line ONLY for the Services page "What I Offer" intro */
+#services-list .services-text {
+  padding-left: 0;         /* remove left offset used on homepage services */
+  text-align: center;      /* you already want centered here */
+}
+
+#services-list .services-text::before {
+  display: none !important;
+  content: none !important;
+}
+
+/* 3) Mini CTA underline: make it match text width (no giant line) */
+.services-mini-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--gold-deep);
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 6px;
+  width: fit-content;
+}
+
+.services-mini-cta::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.services-mini-cta:hover::after {
+  transform: scaleX(1);
+}
+
+/* 4) True mirrored (right-justified) alternate service cards */
+#services-list .service-detail--alt {
+  text-align: right;
+}
+
+#services-list .service-detail--alt .service-summary {
+  margin-left: auto; /* keeps summary visually anchored right */
+}
+
+#services-list .service-detail--alt .service-detail-grid {
+  justify-items: end;       /* columns align to right */
+}
+
+/* Lists on right-aligned cards */
+#services-list .service-detail--alt ul {
+  padding-left: 0;
+  padding-right: 18px;
+  list-style-position: inside;
+}
+
+#services-list .service-detail--alt li {
+  text-align: right;
+}
+
+/* Optional: make headings feel consistently aligned on alt cards */
+#services-list .service-detail--alt h2,
+#services-list .service-detail--alt h3 {
+  margin-left: auto;
+}
+
+/* 5) Mobile: remove the stagger/mirror and keep everything centered/clean */
+@media (max-width: 900px) {
+  #services-list .service-detail,
+  #services-list .service-detail--alt {
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+  }
+
+  #services-list .service-detail--alt .service-detail-grid {
+    justify-items: start;
+  }
+
+  #services-list .service-detail--alt ul {
+    padding-right: 0;
+    padding-left: 18px;
+    list-style-position: outside;
+  }
+
+  #services-list .service-detail--alt li {
+    text-align: left;
+  }
+}
+/* Alt cards: only right-align heading + summary + CTA (not the lists) */
+#services-list .service-detail--alt h2,
+#services-list .service-detail--alt .service-summary,
+#services-list .service-detail--alt .services-mini-cta {
+  text-align: right;
+  margin-left: auto;
+}
+
+/* Keep the grid content (subheads + bullets) normal */
+#services-list .service-detail--alt .service-detail-grid {
+  justify-items: start;
+  text-align: left;
+}
+
+#services-list .service-detail--alt ul,
+#services-list .service-detail--alt li {
+  text-align: left;
+}
+
+/* CTA spacing/placement (now that it's below the grid) */
+.services-mini-cta {
+  margin-top: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+}
+
+/* If you want the CTA to sit near the stripe on alt cards */
+#services-list .service-detail--alt .services-mini-cta {
+  margin-right: 18px; /* lines up nicely with the right stripe */
+}
+
+/* Mobile: keep CTA centered/left for sanity */
+@media (max-width: 900px) {
+  #services-list .service-detail--alt h2,
+  #services-list .service-detail--alt .service-summary,
+  #services-list .service-detail--alt .services-mini-cta {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+/* =========================
+   SERVICE CARD WATERMARKS
+   ========================= */
+
+/* === Watermark (clean + consistent) === */
+.service-detail {
+  position: relative;
+  overflow: hidden;
+}
+
+/* watermark sits BEHIND everything */
+.service-watermark {
+  position: absolute;
+  top: 26px;
+  right: 28px;              /* default: top-right */
+  font-size: 110px;
+  line-height: 1;
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 0;
+  color: var(--gold-deep);
+}
+
+/* alt cards: flip watermark to the other corner (desktop/tablet) */
+.service-detail--alt .service-watermark {
+  right: auto;
+  left: 28px;               /* top-left */
+}
+
+/* put all real content above watermark (but NOT the watermark itself) */
+.service-detail > :not(.service-watermark) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Mobile: keep watermark in ONE consistent corner so it never hits headings */
+@media (max-width: 650px) {
+  .service-watermark {
+    font-size: 78px;
+    opacity: 0.08;
+    top: 14px;
+    right: 14px;
+    left: auto;            /* force right for ALL cards */
+  }
+
+  .service-detail--alt .service-watermark {
+    left: auto;
+    right: 14px;           /* overrides the desktop “left” flip */
+  }
+
+  /* Give the heading/summary room so they don’t slide under the watermark */
+  .service-detail h2,
+  .service-detail .service-summary {
+    padding-right: 96px;
+  }
+}
+/* ===== Service accordion (MOBILE ONLY) ===== */
+
+/* Header button layout */
+.service-header {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+
+  position: relative;
+  z-index: 2; /* keep above watermark */
+}
+
+.service-header-text { flex: 1; }
+
+/* Chevron: keep it in its own fixed “lane” */
+.service-chevron {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+
+  border-radius: 10px;
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(0,0,0,0.08);
+
+  margin-top: 6px;
+  opacity: 0.9;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* Rotate when open */
+.service-detail.is-open .service-chevron {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+/* Panel wrapper */
+.service-panel {
+  position: relative;
+  z-index: 2; /* keep content above watermark */
+}
+
+/* DESKTOP/TABLET: no accordion. Always show panel. Hide chevron. */
+@media (min-width: 901px) {
+  .service-panel {
+    max-height: none !important;
+    opacity: 1 !important;
+    overflow: visible !important;
+    margin-top: 18px;
+  }
+
+  .service-chevron {
+    display: none !important;
+  }
+
+  .service-header {
+    cursor: default;
+  }
+}
+
+/* MOBILE: accordion active */
+@media (max-width: 900px) {
+  .service-panel {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.35s ease, opacity 0.25s ease;
+    margin-top: 0;
+  }
+
+  .service-detail.is-open .service-panel {
+    opacity: 1;
+    margin-top: 16px;
+  }
+
+  /* give header text room so it doesn't run under chevron */
+  .service-header-text h2,
+  .service-header-text .service-summary {
+    padding-right: 12px;
+  }
+}
+/* MOBILE: stack header content vertically */
+@media (max-width: 900px) {
+  .service-header {
+    display: block;          /* stop flex row */
+  }
+
+  .service-header-text {
+    width: 100%;
+  }
+
+  .service-chevron {
+    margin-top: 12px;
+    margin-left: 0;
+    margin-right: auto;      /* left-align by default */
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    position: relative;
+    z-index: 3;              /* above watermark */
+  }
+}
+@media (max-width: 900px) {
+  .service-chevron {
+    margin-left: auto;
+    margin-right: auto;      /* centers it */
+    display: grid;
+    place-items: center;
+  }
+}
+/* A subtle bounce */
+@keyframes chevron-bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(6px); }
+}
+
+/* MOBILE: animate only when the card is collapsed */
+@media (max-width: 900px) {
+  .service-detail:not(.is-open) .service-chevron {
+    animation: chevron-bob 1.4s ease-in-out infinite;
+    opacity: 0.9;
+  }
+
+  /* Stop bouncing once opened */
+  .service-detail.is-open .service-chevron {
+    animation: none;
+  }
+}
+@media (max-width: 900px) {
+  .service-chevron {
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    background: rgba(232,174,0,0.10);
+    border: 1px solid rgba(199,149,0,0.25);
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+
+  /* tap feedback */
+  .service-header:active .service-chevron {
+    transform: scale(0.95);
+  }
+}
+/* Offset anchor jumps to account for fixed 90px navbar */
+#services-list .service-detail {
+  scroll-margin-top: 110px;
+}
+@media (max-width: 768px) {
+  .nav-container {
+    justify-content: center;
+  }
+
+  .nav-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 70px; /* keep your mobile logo size */
+  }
+
+  .nav-toggle {
+    position: absolute;
+    right: 24px;
+  }
 }
