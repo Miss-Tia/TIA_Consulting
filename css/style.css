@@ -1685,8 +1685,8 @@ footer p {
   /* Calendly widget sizing + overflow fix */
   body.contact-page .calendly-inline-widget {
     width: 100% !important;
-    min-width: 0 !important;  /* IMPORTANT: stops "running off the page" */
-    height: 760px !important; /* adjust later if needed */
+    min-width: 0 !important;  
+    height: 760px !important; 
   }
 
   /* ========= FORM OVERFLOW FIX ========= */
@@ -1698,4 +1698,39 @@ footer p {
     box-sizing: border-box;
     max-width: 100%;
   }
+}
+/* =========================
+   CONTACT PAGE — MOBILE CALENDLY BUTTON SWAP
+   ========================= */
+
+/* Desktop default */
+.mobile-calendly-btn {
+  display: none;
+}
+
+/* Mobile behavior */
+@media (max-width: 768px) {
+
+  /* Hide inline Calendly on mobile */
+  body.contact-page .calendly-wrap {
+    display: none !important;
+  }
+
+  /* Show button instead */
+  body.contact-page .mobile-calendly-btn {
+    display: inline-block;
+    margin: 24px auto 0;
+    text-align: center;
+  }
+
+  /* Center the button cleanly */
+  body.contact-page #booking.page-section {
+    text-align: center;
+  }
+}
+#booking .calendly-wrap {
+  height: auto;
+  max-height: none;
+  overflow: hidden; /* keep your rounded corners clean */
+  padding-bottom: 24px;
 }
