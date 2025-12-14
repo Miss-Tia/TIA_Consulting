@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+  <title>TIA Consulting | Contact</title>
+
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html">
+        <img src="assets/Logo_transparent.png" alt="TIA Consulting Logo" class="nav-logo" />
+      </a>
+
+      <button class="nav-toggle" aria-label="toggle navigation">
+        ☰
+      </button>
+
+      <nav class="nav-menu">
+        <ul class="nav-links">
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="index.html#clients">Clients</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <h1 class="gold-gradient">Contact</h1>
+    <p class="page-hero-sub">
+      Book a consultation, or send me a message Either way, we’ll keep it clear, calm, and practical. This is the right place to start getting your tech in order!
+    </p>
+  </section>
+
+  <!-- CALENDLY (TOP) -->
+  <section class="page-section light" id="booking" style="text-align: center;">
+    <div class="services-details-wrap">
+      <h2 class="gold-gradient">Book a Consultation</h2>
+      <p>If you’d like to talk live, grab a time that works for you.</p>
+
+     
+      <div class="calendly-inline-widget" data-url="https://calendly.com/tia-nationbuilder/consultation?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=E8AE00" style="min-width:520px;height:700px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    
+    </div>
+  </section>
+
+  <!-- MESSAGE FORM (BOTTOM) -->
+  <section class="page-section dark" id="message" style="text-align: center;">
+    <h2 class="gold-gradient">Send a Message</h2>
+    <p>If booking a consultation isn’t your thing, send a note and I’ll reply soon.</p>
+
+    <div class="services-details-wrap contact-wrap">
+      <form
+        action="https://formspree.io/f/xpwvnzjd"
+        method="POST"
+        class="contact-form"
+      >
+        <div class="contact-fields">
+          <label class="contact-label">
+            Name
+            <input class="contact-input" type="text" name="name" required />
+          </label>
+
+          <label class="contact-label">
+            Email
+            <input class="contact-input" type="email" name="email" required />
+          </label>
+
+          <label class="contact-label">
+            Subject
+            <input class="contact-input" type="text" name="subject" />
+          </label>
+
+          <label class="contact-label">
+            Message
+            <textarea class="contact-textarea" name="message" rows="7" required></textarea>
+          </label>
+
+          <!-- spam honeypot -->
+          <input type="text" name="_gotcha" style="display:none" />
+
+          <div class="contact-submit">
+            <button type="submit" class="btn btn-primary">Send message</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <img src="assets/Logo_transparent.png" alt="TIA Consulting Logo" class="footer-logo" />
+
+      <p class="copyright">
+        &copy; <span id="year"></span> TIA Consulting. Technology. Insight. Alignment.
+      </p>
+
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/andietia" target="_blank" aria-label="LinkedIn" class="linkedin-link" rel="noopener">
+          <i class="fab fa-linkedin"></i>
+          <span class="tooltip">Connect with Tia on LinkedIn</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Make sections appear on page load
+    document.querySelectorAll(".section, footer").forEach(section => {
+      section.classList.add("visible");
+    });
+
+    // Footer year
+    const year = document.getElementById("year");
+    if (year) year.textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const toggle = document.querySelector(".nav-toggle");
+    const menu = document.querySelector(".nav-menu");
+    if (toggle && menu) {
+      toggle.addEventListener("click", () => menu.classList.toggle("active"));
+    }
+  </script>
+
+</body>
+</html>

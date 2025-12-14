@@ -30,28 +30,48 @@ body {
   backdrop-filter: blur(6px);
   z-index: 100;
   border-bottom: 1px solid rgba(255,255,255,0.1);
+
+  /* Optical centering wrapper */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Desktop nav height (consistent across pages) */
+  height: 90px;
 }
 
 /* NAV CONTAINER */
 .nav-container {
+  width: 100%;
+  max-width: 1400px;
+
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
+  justify-content: center;
+
   position: relative;
+  padding: 15px 40px;
 }
 
+/* LOGO */
 .nav-logo {
-  height: 80px;
+  position: absolute;
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 70px;
   margin-right: 20px;
   flex-shrink: 0;
+  display: block; /* prevents inline image baseline weirdness */
 }
 
+/* NAV MENU */
 .nav-menu {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: translateX(-20px);
 }
 
 .nav-links {
@@ -60,6 +80,7 @@ body {
   gap: 40px;
   margin: 0;
   padding: 0;
+  justify-content: center;
 }
 
 .nav-links a {
@@ -90,57 +111,35 @@ body {
   color: var(--gold-light);
 }
 
-/* --- Optical Nav Centering --- */
-.navbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.navbar {
-  height: 90px;
-}
-
-.nav-container {
-  width: 100%;
-  max-width: 1400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  padding: 15px 40px;
-}
-
-.nav-logo {
-  position: absolute;
-  left: 40px;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 70px;
-}
-
-
-.nav-menu {
-  display: flex;
-  justify-content: center;
-  flex: 1;
-  transform: translateX(-20px);
-  
-}
-
-.nav-links {
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-
 /* RESPONSIVE MENU */
 @media (max-width: 768px) {
-  .nav-container { justify-content: space-between; }
-  .nav-toggle { display: block; }
+  /* slightly taller on mobile so logo reads better */
+  .navbar {
+    height: 104px;
+  }
+
+  .nav-container {
+    justify-content: center;
+    padding: 18px 20px;
+    height: 104px; /* stable centering box */
+  }
+
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    right: 24px;
+  }
+
+  /* Center logo on mobile (correct vertical + horizontal centering) */
+  .nav-logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 74px; /* a bit larger on mobile */
+    margin: 0;
+  }
+
   .nav-menu {
     display: none;
     position: absolute;
@@ -151,35 +150,17 @@ body {
     text-align: center;
     padding: 20px 0;
     border-top: 1px solid rgba(255,255,255,0.1);
-  }
-  .nav-menu.active { display: block; }
-  .nav-links { flex-direction: column; gap: 20px; }
-  .nav-links a { font-size: 18px; }
-}
-
-/* Keep nav toggle aligned for mobile */
-@media (max-width: 768px) {
-  .nav-container {
-    justify-content: space-between;
-  }
-
-  .nav-logo {
-    position: static;
-    height: 60px;
-  }
-}
-@media (max-width: 768px) {
-  .nav-logo {
-    position: static;
-    height: 60px;
-
     transform: none;
-    top: auto;
-    left: auto;
-
-    width: auto;
-    display: block;
   }
+
+  .nav-menu.active { display: block; }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .nav-links a { font-size: 18px; }
 }
 
 /* HERO */
@@ -249,7 +230,6 @@ p { color: var(--gray); font-size: 18px; }
   background-position: left;
 }
 
-
 .highlighted { background-position: right; }
 
 /* SECTION BASE */
@@ -265,7 +245,6 @@ p { color: var(--gray); font-size: 18px; }
 }
 
 /* ABOUT SECTION */
-
 #about p {
   color: var(--gray);
   max-width: 800px;
@@ -344,9 +323,8 @@ p { color: var(--gray); font-size: 18px; }
   }
 
   #about {
-  padding: 40px 0 70px;
-}
-
+    padding: 40px 0 70px;
+  }
 
   .about-image img {
     width: 65%;
@@ -360,8 +338,6 @@ p { color: var(--gray); font-size: 18px; }
     margin-top: 0;
   }
 }
-
-
 
 .visible {
   opacity: 1;
@@ -387,7 +363,8 @@ p { color: var(--gray); font-size: 18px; }
 #contact h2 {
   color: var(--black);
 }
- /*Services page sections*/
+
+/* Services page sections */
 .page-section {
   padding: 60px 0;
 }
@@ -466,8 +443,8 @@ p { color: var(--gray); font-size: 18px; }
   margin-bottom: 8px;
   color: #333;
 }
-/* === Services page polish: stagger + accents === */
 
+/* === Services page polish: stagger + accents === */
 .service-detail {
   position: relative;
   overflow: hidden;
@@ -528,7 +505,6 @@ p { color: var(--gray); font-size: 18px; }
   border-bottom-color: currentColor;
 }
 
-
 @media (max-width: 900px) {
   #services-list .service-detail,
   #services-list .service-detail--alt {
@@ -543,7 +519,6 @@ p { color: var(--gray); font-size: 18px; }
     right: auto;
   }
 }
-
 
 @media (max-width: 900px) {
   .service-detail-grid {
@@ -562,6 +537,7 @@ p { color: var(--gray); font-size: 18px; }
 .section:not(:last-child) {
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
+
 /* HOW I WORK SECTION */
 .how-work-wrap {
   max-width: 1200px;
@@ -703,11 +679,11 @@ p { color: var(--gray); font-size: 18px; }
   box-shadow: 0 0 20px rgba(232,174,0,0.25);
   transform: translateY(-4px);
 }
+
 .services-link-wrapper {
   margin-top: 2rem;
   text-align: center;
 }
-
 
 .services-link {
   color: var(--gold, #E8AE00); 
@@ -715,20 +691,20 @@ p { color: var(--gray); font-size: 18px; }
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: color 0.2s ease, border-color 0.2s ease;
- text-align: right; 
+  text-align: right; 
   font-size: 1.4rem;
 }
 
 .services-link:hover {
   border-bottom-color: currentColor;
 }
+
 .services-hint {
   margin: 0 0 0.4rem;
   font-size: 0.95rem;
   color: var(--gray);
   opacity: 0.9;
 }
-
 
 @media (max-width: 768px) {
   #services {
@@ -751,7 +727,6 @@ p { color: var(--gray); font-size: 18px; }
     padding: 24px;
   }
 }
-
 
 /* CLIENTS SECTION */
 #clients {
@@ -863,6 +838,7 @@ p { color: var(--gray); font-size: 18px; }
     min-height: 130px;
   }
 }
+
 /* Tablet & mobile responsiveness */
 @media (max-width: 992px) {
   .clients-container {
@@ -939,10 +915,12 @@ p { color: var(--gray); font-size: 18px; }
   .clients-text p {
     font-size: 0.95rem;
   }
+
   .clients-grid {
-  scroll-behavior: smooth;
-    }   
+    scroll-behavior: smooth;
+  }   
 }
+
 /* 🖥️ Large screens (wide desktop monitors) */
 @media (min-width: 1400px) {
   .clients-container {
@@ -1102,7 +1080,6 @@ footer p {
   bottom: 150%;
 }
 
-
 /* RESPONSIVE */
 @media (max-width: 1024px) {
   body { padding: 20px; }
@@ -1133,6 +1110,7 @@ footer p {
   p { font-size: 15px; }
   .section { padding: 60px 0; }
 }
+
 /* 1) Don't let global/mobile .btn rules mess up page CTAs */
 @media (max-width: 768px) {
   /* Keep your global .btn behavior if you like it elsewhere… */
@@ -1239,6 +1217,7 @@ footer p {
     text-align: left;
   }
 }
+
 /* Alt cards: only right-align heading + summary + CTA (not the lists) */
 #services-list .service-detail--alt h2,
 #services-list .service-detail--alt .service-summary,
@@ -1282,15 +1261,10 @@ footer p {
     margin-right: 0;
   }
 }
+
 /* =========================
    SERVICE CARD WATERMARKS
    ========================= */
-
-/* === Watermark (clean + consistent) === */
-.service-detail {
-  position: relative;
-  overflow: hidden;
-}
 
 /* watermark sits BEHIND everything */
 .service-watermark {
@@ -1338,6 +1312,7 @@ footer p {
     padding-right: 96px;
   }
 }
+
 /* ===== Service accordion (MOBILE ONLY) ===== */
 
 /* Header button layout */
@@ -1428,6 +1403,7 @@ footer p {
     padding-right: 12px;
   }
 }
+
 /* MOBILE: stack header content vertically */
 @media (max-width: 900px) {
   .service-header {
@@ -1452,6 +1428,7 @@ footer p {
     z-index: 3;              /* above watermark */
   }
 }
+
 @media (max-width: 900px) {
   .service-chevron {
     margin-left: auto;
@@ -1460,6 +1437,7 @@ footer p {
     place-items: center;
   }
 }
+
 /* A subtle bounce */
 @keyframes chevron-bob {
   0%, 100% { transform: translateY(0); }
@@ -1478,6 +1456,7 @@ footer p {
     animation: none;
   }
 }
+
 @media (max-width: 900px) {
   .service-chevron {
     width: 44px;
@@ -1493,24 +1472,109 @@ footer p {
     transform: scale(0.95);
   }
 }
+
 /* Offset anchor jumps to account for fixed 90px navbar */
 #services-list .service-detail {
   scroll-margin-top: 110px;
 }
+/* =========================
+   CONTACT PAGE (contact.html)
+   ========================= */
+
+.contact-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* Keep Calendly from feeling “floating” */
+#booking .calendly-inline-widget {
+  margin-top: 18px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.10);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.10);
+}
+
+/* Form layout */
+.contact-form {
+  margin-top: 26px;
+}
+
+.contact-fields {
+  display: grid;
+  gap: 16px;
+}
+
+/* Labels */
+.contact-label {
+  display: grid;
+  gap: 8px;
+  color: var(--white);          /* dark section */
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* Inputs */
+.contact-input,
+.contact-textarea {
+  width: 100%;
+  font-family: var(--font-main);
+  font-size: 16px;
+  color: var(--white);
+
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 12px;
+
+  padding: 14px 14px;
+  outline: none;
+
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.contact-textarea {
+  resize: vertical;
+  min-height: 160px;
+}
+
+/* Focus state: soft gold glow (matches your palette) */
+.contact-input:focus,
+.contact-textarea:focus {
+  border-color: rgba(232,174,0,0.70);
+  box-shadow: 0 0 0 4px rgba(232,174,0,0.18);
+  background: rgba(255,255,255,0.08);
+}
+
+/* Submit area */
+.contact-submit {
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* Email line */
+.contact-email {
+  text-align: center;
+  margin-top: 18px;
+  color: var(--gray);
+}
+
+.contact-email a {
+  color: var(--gold-light);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-email a:hover {
+  text-shadow: 0 0 10px rgba(232,174,0,0.35);
+}
+
+/* Mobile spacing */
 @media (max-width: 768px) {
-  .nav-container {
-    justify-content: center;
+  .contact-wrap {
+    padding: 0 20px;
   }
 
-  .nav-logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 70px; /* keep your mobile logo size */
-  }
-
-  .nav-toggle {
-    position: absolute;
-    right: 24px;
+  #booking .calendly-inline-widget {
+    border-radius: 12px;
   }
 }
