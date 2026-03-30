@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/contact.css" />
 </head>
 
 <body class="contact-page">
@@ -29,10 +30,32 @@
       <nav class="nav-menu">
         <ul class="nav-links">
           <li><a href="index.html#hero">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="nav-item--dropdown">
+            <div class="nav-dropdown-wrap">
+              <a href="services.html">Services</a>
+              <button class="nav-dropdown-btn" aria-expanded="false" aria-label="Toggle services menu">▾</button>
+            </div>
+            <ul class="nav-dropdown-menu">
+              <li><a href="services.html">All Services</a></li>
+              <li><a href="process-systems.html">Process &amp; Systems</a></li>
+              <li><a href="it-consulting.html">IT Consulting</a></li>
+              <li><a href="web-development.html">Web Development</a></li>
+              <li><a href="automation.html">Automation Solutions</a></li>
+              <li><a href="nationbuilder.html">NationBuilder</a></li>
+            </ul>
+          </li>
           <li><a href="index.html#clients">Clients</a></li>
-          <li><a href="contact.html" aria-current="page">Contact</a></li>
+          <li class="nav-item--dropdown">
+            <div class="nav-dropdown-wrap">
+              <a href="contact.html" aria-current="page">Contact</a>
+              <button class="nav-dropdown-btn" aria-expanded="false" aria-label="Toggle contact menu">&#9662;</button>
+            </div>
+            <ul class="nav-dropdown-menu">
+              <li><a href="contact.html#booking">Book a Consultation</a></li>
+              <li><a href="contact.html#message">Send a Message</a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
     </div>
@@ -42,7 +65,7 @@
   <section class="page-hero">
     <h1 class="gold-gradient">Contact</h1>
     <p class="page-hero-sub">
-      Book a consultation or send a message. Either way, we’ll keep it clear, calm, and practical. You're in the right place to get tech done right.
+      Book a consultation or send a message. Either way, I’ll keep it clear, calm, and practical. You're in the right place to get tech done right.
     </p>
   </section>
 
@@ -75,7 +98,7 @@
 
     <div class="services-details-wrap contact-wrap">
       <form
-        action="https://formspree.io/f/YOUR_FORM_ID"
+        action="https://formspree.io/f/mpqodoky"
         method="POST"
         class="contact-form"
       >
@@ -131,22 +154,10 @@
   </footer>
 
   <!-- SCRIPTS -->
+  <script src="js/main.js"></script>
   <script>
-    // Make sections appear on page load
-    document.querySelectorAll(".section, footer").forEach(section => {
-      section.classList.add("visible");
-    });
-
-    // Footer year
-    const year = document.getElementById("year");
-    if (year) year.textContent = new Date().getFullYear();
-
-    // Mobile nav toggle
-    const toggle = document.querySelector(".nav-toggle");
-    const menu = document.querySelector(".nav-menu");
-    if (toggle && menu) {
-      toggle.addEventListener("click", () => menu.classList.toggle("active"));
-    }
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.querySelectorAll(".section, footer").forEach(el => el.classList.add("visible"));
   </script>
 
 </body>

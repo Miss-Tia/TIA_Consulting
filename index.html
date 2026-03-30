@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/home.css" />
 </head>
 <body>
 <header class="navbar">
@@ -23,10 +24,32 @@
     <nav class="nav-menu">
       <ul class="nav-links">
           <li><a href="index.html#hero">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="nav-item--dropdown">
+            <div class="nav-dropdown-wrap">
+              <a href="services.html">Services</a>
+              <button class="nav-dropdown-btn" aria-expanded="false" aria-label="Toggle services menu">▾</button>
+            </div>
+            <ul class="nav-dropdown-menu">
+              <li><a href="services.html">All Services</a></li>
+              <li><a href="process-systems.html">Process &amp; Systems</a></li>
+              <li><a href="it-consulting.html">IT Consulting</a></li>
+              <li><a href="web-development.html">Web Development</a></li>
+              <li><a href="automation.html">Automation Solutions</a></li>
+              <li><a href="nationbuilder.html">NationBuilder</a></li>
+            </ul>
+          </li>
           <li><a href="index.html#clients">Clients</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li class="nav-item--dropdown">
+            <div class="nav-dropdown-wrap">
+              <a href="contact.html">Contact</a>
+              <button class="nav-dropdown-btn" aria-expanded="false" aria-label="Toggle contact menu">&#9662;</button>
+            </div>
+            <ul class="nav-dropdown-menu">
+              <li><a href="contact.html#booking">Book a Consultation</a></li>
+              <li><a href="contact.html#message">Send a Message</a></li>
+            </ul>
+          </li>
       </ul>
     </nav>
   </div>
@@ -47,12 +70,12 @@
     <div class="about-text">
       <h2 class="gold-gradient">Need Tech Help? Get It Done Right!</h2>
       <p>
-        TIA Consulting delivers technology solutions with precision and peace of mind. 
-        Our focus on insight and alignment allows organizations to thrive in a connected world.
-        We empower teams through strategy, technology, and aligned execution — bridging the gap
+        TIA Consulting delivers technology solutions with precision and peace of mind.
+        My focus on insight and alignment helps organizations thrive in a connected world.
+        I empower teams through strategy, technology, and aligned execution — bridging the gap
         between business goals and technical implementation.
       </p>
-      <a href="#" class="btn btn-secondary">More about TIA</a>
+      <a href="about.html" class="btn btn-secondary">More about TIA</a>
       
     </div>
 
@@ -67,17 +90,31 @@
     <div class="services-text">
       <h2 class="gold-gradient">My Services</h2>
       <p class="services-intro">
-        At TIA Consulting, we specialize in blending technology and insight to create alignment between your business goals and your digital tools. Whether you're looking to optimize your current systems or embark on a new digital journey, our tailored services are designed to meet your unique needs.
+        I specialize in blending technology and insight to create alignment between your business goals and your digital tools. Whether you're looking to optimize your current systems or embark on a new digital journey, my services are designed to meet your unique needs.
       </p>
     </div>
 
     
     <div class="services-right">
       <div class="services-grid">
+
+        <!-- FEATURED SERVICE — remove this card to revert to 4-card grid -->
+        <div class="service-card service-card--featured fade"
+          role="link"
+          tabindex="0"
+          data-href="process-systems.html"
+        >
+          <span class="service-card__badge">Featured Service</span>
+          <h3 class="gold-gradient">Process &amp; Systems Consulting</h3>
+          <p>Clearer workflows, better tool alignment, and systems that support the way your organization actually works. From quick audits to full implementation.</p>
+          <span class="service-card__link">View packages →</span>
+        </div>
+        <!-- END FEATURED SERVICE -->
+
         <div class="service-card fade"
         role="link"
         tabindex="0"
-        data-href="services.html#it-consulting"
+        data-href="it-consulting.html"
         >
           <h3 class="gold-gradient">IT Consulting</h3>
           <p>Aligning your technology stack with your long-term business vision.</p>
@@ -86,7 +123,7 @@
         <div class="service-card fade"
         role="link"
         tabindex="0"
-        data-href="services.html#web-development"
+        data-href="web-development.html"
         >
           <h3 class="gold-gradient">Web Development</h3>
           <p>Modern, performant websites and apps that engage users and drive results.</p>
@@ -95,12 +132,15 @@
         <div class="service-card fade"
         role="link"
         tabindex="0"
-        data-href="services.html#automation">
+        data-href="automation.html">
           <h3 class="gold-gradient">Automation Solutions</h3>
           <p>Streamlining operations with smart, efficient automation tools.</p>
         </div>
 
-        <div class="service-card fade">
+        <div class="service-card fade"
+        role="link"
+        tabindex="0"
+        data-href="nationbuilder.html">
           <h3 class="gold-gradient">NationBuilder Consulting</h3>
           <p>Expert setup, theme customization, and strategic growth solutions.</p>
         </div>
@@ -116,28 +156,36 @@
 
 
 <section id="clients" class="section fade">
-  <div class="clients-container">
-    <div class="clients-grid">
-      <div class="client-card">
-        <img src="assets/RPC_transparent.png" alt="Rainbow PUSH Coalition">
-      </div>
-      <div class="client-card">
-        <img src="assets/SCEC_transparent.png" alt="Sunshine Coast Environment Council">
-      </div>
-      <div class="client-card">
-        <img src="assets/BIFLA_transparent.png" alt="Black Infants and Families Los Angeles">
-      </div>
-    <div class="client-card">
-        <img src="assets/toma_logo_bigger.png" alt="TOMA Tribal Outreach">
-    </div>
-</div>
-    <div class="clients-text">
-      <h2 class="gold-gradient-deep">Organizations I've Worked With</h2>
+  <div class="clients-inner">
+    <div class="clients-header">
+      <h2 class="gold-gradient">Organizations I’ve Worked With</h2>
       <p>
-        We’ve had the privilege of collaborating with mission-driven organizations 
-        that use technology as a force for good. Each partnership reflects our 
+        I’ve had the privilege of collaborating with mission-driven organizations
+        that use technology as a force for good. Each partnership reflects my
         commitment to alignment, strategy, and meaningful digital transformation.
       </p>
+    </div>
+    <div class="clients-carousel">
+      <div class="clients-track" id="clientsTrack">
+        <div class="client-card">
+          <img src="assets/RPC_transparent.png" alt="Rainbow PUSH Coalition">
+        </div>
+        <div class="client-card">
+          <img src="assets/SCEC_transparent.png" alt="Sunshine Coast Environment Council">
+        </div>
+        <div class="client-card">
+          <img src="assets/BIFLA_transparent.png" alt="Black Infants and Families Los Angeles">
+        </div>
+        <div class="client-card">
+          <img src="assets/toma_logo_bigger.png" alt="TOMA Tribal Outreach">
+        </div>
+      </div>
+      <div class="clients-dots" id="clientsDots">
+        <button class="clients-dot active" data-index="0" aria-label="Client 1"></button>
+        <button class="clients-dot" data-index="1" aria-label="Client 2"></button>
+        <button class="clients-dot" data-index="2" aria-label="Client 3"></button>
+        <button class="clients-dot" data-index="3" aria-label="Client 4"></button>
+      </div>
     </div>
   </div>
 </section>

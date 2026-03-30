@@ -11,59 +11,126 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/services.css" />
 </head>
 
-<body>
-
-  <!-- NAVBAR -->
+<body class="services-page">
   <header class="navbar">
-    <div class="nav-container">
-      <a href="index.html">
-        <img src="assets/Logo_transparent.png" alt="TIA Consulting Logo" class="nav-logo" />
-      </a>
-
-      <button class="nav-toggle" aria-label="toggle navigation">
-        ☰
-      </button>
-
-      <nav class="nav-menu">
-        <ul class="nav-links">
+  <div class="nav-container">
+    <img src="assets/Logo_transparent.png" alt="TIA Consulting Logo" class="nav-logo">
+    
+    <button class="nav-toggle" aria-label="toggle navigation">
+      ☰
+    </button>
+    
+    <nav class="nav-menu">
+      <ul class="nav-links">
           <li><a href="index.html#hero">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="nav-item--dropdown">
+            <div class="nav-dropdown-wrap">
+              <a href="services.html">Services</a>
+              <button class="nav-dropdown-btn" aria-expanded="false" aria-label="Toggle services menu">▾</button>
+            </div>
+            <ul class="nav-dropdown-menu">
+              <li><a href="services.html">All Services</a></li>
+              <li><a href="process-systems.html">Process &amp; Systems</a></li>
+              <li><a href="it-consulting.html">IT Consulting</a></li>
+              <li><a href="web-development.html">Web Development</a></li>
+              <li><a href="automation.html">Automation Solutions</a></li>
+              <li><a href="nationbuilder.html">NationBuilder</a></li>
+            </ul>
+          </li>
           <li><a href="index.html#clients">Clients</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+          <li class="nav-item--dropdown">
+            <div class="nav-dropdown-wrap">
+              <a href="contact.html">Contact</a>
+              <button class="nav-dropdown-btn" aria-expanded="false" aria-label="Toggle contact menu">&#9662;</button>
+            </div>
+            <ul class="nav-dropdown-menu">
+              <li><a href="contact.html#booking">Book a Consultation</a></li>
+              <li><a href="contact.html#message">Send a Message</a></li>
+            </ul>
+          </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main class="services-page">
+
 
   <!-- HERO -->
-  <section class="page-hero">
-  <h1 class="gold-gradient">Services</h1>
-  <p class="page-hero-sub">
-    Thoughtful, ethical technology consulting designed to help organizations build systems that actually serve their people and their mission.
-  </p>
-  <a href="https://calendly.com/tia-nationbuilder/consultation" class="btn btn-primary" target="_blank" rel="noopener">
-    Book a Consultation
-  </a>
+<section class="services-hero">
+  <div class="services-hero-inner">
+    <p class="services-kicker">Services</p>
+    <h1 class="gold-gradient">Technology and systems support that makes your work easier to run.</h1>
+    <p class="page-hero-sub">
+      Thoughtful, ethical consulting for organizations that need clearer workflows, better tools,
+      and systems that actually support their people.
+    </p>
+
+    <div class="services-hero-actions">
+      <a href="https://calendly.com/tia-nationbuilder/consultation" class="btn btn-primary" target="_blank" rel="noopener">
+        Book a Consultation
+      </a>
+      <a href="#process-systems" class="btn btn-outline">
+        Explore Featured Service
+      </a>
+    </div>
+  </div>
 </section>
 
-
-  <!-- SERVICES LIST -->
-  <section class="page-section light" id="services-list">
-
-    <div class="services-details-wrap">
-
-  <div class="services-text" style="text-align: center">
-    <h2 class="gold-gradient">What I Offer</h2>
-    <p class="services-intro">
-      Each engagement starts with understanding your goals, your constraints,
-      and the people your technology impacts.
+<!-- FEATURED -->
+<section class="featured-spotlight" id="process-systems">
+  <div class="featured-spotlight__inner">
+    <p class="featured-spotlight__label">Featured Service</p>
+    <h2 class="featured-spotlight__title gold-gradient">Process &amp; Systems Consulting</h2>
+    <p class="featured-spotlight__subtitle">
+      Clearer workflows, better tool alignment, and systems that support the way your organization actually works.
     </p>
-  </div>
 
-  <!-- IT Consulting -->
+    <div class="featured-spotlight__cards">
+      <article class="spotlight-card">
+        <p class="spotlight-card__price">From $750</p>
+        <h3>Clarity Audit</h3>
+        <p class="spotlight-card__desc">Identify friction, duplication, and the highest-priority fixes.</p>
+        <a href="process-systems.html" class="spotlight-card__btn">Learn More</a>
+      </article>
+
+      <article class="spotlight-card spotlight-card--featured">
+        <p class="spotlight-card__price">From $2,000</p>
+        <h3>Workflow Redesign</h3>
+        <p class="spotlight-card__desc">Restructure your process so your tools and responsibilities make sense.</p>
+        <a href="process-systems.html" class="spotlight-card__btn">Learn More</a>
+      </article>
+
+      <article class="spotlight-card">
+        <p class="spotlight-card__price">From $4,000</p>
+        <h3>Implementation</h3>
+        <p class="spotlight-card__desc">Set up the system so the process works in practice, not just on paper.</p>
+        <a href="process-systems.html" class="spotlight-card__btn">Learn More</a>
+      </article>
+    </div>
+
+    <div class="featured-spotlight__cta">
+      <a href="process-systems.html" class="spotlight-link">View service details →</a>
+    </div>
+
+    <div class="featured-spotlight__divider" aria-hidden="true"></div>
+  </div>
+</section>
+  <!-- OTHER SERVICES -->
+  <section class="page-section light" id="services-list">
+    <div class="services-details-wrap">
+      <div class="services-text services-text--center">
+        <h2 class="gold-gradient">Other Ways I Can Support Your Work</h2>
+        <p class="services-intro">
+          These services complement process and systems consulting and can also be booked on their own.
+        </p>
+      </div>
+
+
+   <!-- IT Consulting -->
   <div class="service-detail" id="it-consulting">
   <i class="fa-solid fa-users-gear service-watermark" aria-hidden="true"></i>
 
@@ -106,9 +173,10 @@
       </div>
     </div>
 
-    <a class="services-mini-cta" href="https://calendly.com/tia-nationbuilder/consultation" target="_blank" rel="noopener">
-      Ask about this service →
-    </a>
+    <div class="service-detail-ctas">
+      <a class="services-mini-cta" href="it-consulting.html">View service details →</a>
+      <a class="services-mini-cta services-mini-cta--secondary" href="contact.html#message">Questions? Ask about this service →</a>
+    </div>
   </div>
 </div>
 
@@ -156,14 +224,10 @@
       </div>
     </div>
 
-    <a
-      class="services-mini-cta"
-      href="https://calendly.com/tia-nationbuilder/consultation"
-      target="_blank"
-      rel="noopener"
-    >
-      Ask about this service →
-    </a>
+    <div class="service-detail-ctas">
+      <a class="services-mini-cta" href="web-development.html">View service details →</a>
+      <a class="services-mini-cta services-mini-cta--secondary" href="contact.html#message">Questions? Ask about this service →</a>
+    </div>
   </div>
 </div>
 
@@ -212,14 +276,10 @@
       </div>
     </div>
 
-    <a
-      class="services-mini-cta"
-      href="https://calendly.com/tia-nationbuilder/consultation"
-      target="_blank"
-      rel="noopener"
-    >
-      Ask about this service →
-    </a>
+    <div class="service-detail-ctas">
+      <a class="services-mini-cta" href="automation.html">View service details →</a>
+      <a class="services-mini-cta services-mini-cta--secondary" href="contact.html#message">Questions? Ask about this service →</a>
+    </div>
   </div>
 </div>
 
@@ -267,192 +327,76 @@
       </div>
     </div>
 
-    <a
-      class="services-mini-cta"
-      href="https://calendly.com/tia-nationbuilder/consultation"
-      target="_blank"
-      rel="noopener"
-    >
-      Ask about this service →
-    </a>
+    <div class="service-detail-ctas">
+      <a class="services-mini-cta" href="nationbuilder.html">View service details →</a>
+      <a class="services-mini-cta services-mini-cta--secondary" href="contact.html#message">Questions? Ask about this service →</a>
+    </div>
   </div>
 </div>
+      <div class="featured-spotlight__divider" aria-hidden="true"></div>
     </div>
 </section>
 
-  <!-- CTA -->
-  <section class="page-section dark" style="text-align: center;">
-    <h2 class="gold-gradient">Let’s Talk</h2>
-    <p>If you’re not sure where to start, a consultation is the easiest first step.</p>
-    <a
-      href="https://calendly.com/tia-nationbuilder/consultation"
-      class="btn btn-primary"
-      target="_blank"
-      rel="noopener"
-    >
-      Book a Consultation
-    </a>
-  </section>
+  <!-- HOW I WORK -->
+  <section class="page-section light how-i-work">
+    <div class="how-work-wrap">
+      <div class="how-work-media">
+        <img src="assets/how-i-work.png" alt="A calm, grounded visual representing mission-driven work" />
+      </div>
 
-<!-- HOW I WORK -->
-<section class="page-section light how-i-work">
-  <div class="how-work-wrap">
-
-    <div class="how-work-media">
-      <img src="assets/how-i-work.png" alt="A calm, grounded visual representing mission-driven work" />
-    </div>
-
-    <div class="how-work-text">
-      <h2 class="gold-gradient">How I Work</h2>
-
-      <p>
-        TIA Consulting supports mission-driven work and uses technology as a force for good.
-        I do not accept projects that promote harassment, hate, discrimination, or
-        dehumanization of any group, or that are intended to intimidate, exclude,
-        or target people for who they are.
-      </p>
-
-      <p>
-        If your work is rooted in dignity, safety, and positive impact, you’ll feel right at home here.
-        If this boundary feels misaligned with your goals, we may not be the right fit...and that’s okay.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-content">
-      <img src="assets/Logo_transparent.png" alt="TIA Consulting Logo" class="footer-logo" />
-
-      <p class="copyright">
-        &copy; <span id="year"></span> TIA Consulting. Technology. Insight. Alignment.
-      </p>
-
-      <div class="footer-socials">
-        <a href="https://www.linkedin.com/in/andietia" target="_blank" aria-label="LinkedIn" class="linkedin-link" rel="noopener">
-          <i class="fab fa-linkedin"></i>
-          <span class="tooltip">Connect with Tia on LinkedIn</span>
-        </a>
+      <div class="how-work-text">
+        <p class="eyebrow">How I Work</p>
+        <h2 class="gold-gradient">Clear. Ethical. Human-Centered.</h2>
+        <p>
+          TIA Consulting supports mission-driven work and uses technology as a force for good.
+          I do not accept projects that promote harassment, hate, discrimination, or dehumanization
+          of any group, or that are intended to intimidate, exclude, or target people for who they are.
+        </p>
+        <p>
+          If your work is rooted in dignity, safety, and positive impact, you'll feel right at home here.
+          If this boundary feels misaligned with your goals, we may not be the right fit&hellip;and that's okay. 
+        </p>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <!-- SCRIPTS -->
-  <script>
-    // Make sections appear on page load
-    document.querySelectorAll(".section, footer").forEach(section => {
-      section.classList.add("visible");
-    });
+  <!-- FINAL CTA -->
+  <section class="page-section dark services-final-cta">
+    <div class="page-shell services-final-cta__inner">
+      <h2 class="gold-gradient">Not sure where to start?</h2>
+      <p>
+        A consultation is the easiest first step if you know something in your systems needs attention
+        but you’re not yet sure what kind of support you need.
+      </p>
+      <a href="https://calendly.com/tia-nationbuilder/consultation" class="btn btn-primary" target="_blank" rel="noopener">
+        Book a Consultation
+      </a>
+    </div>
+  </section>
 
-    // Footer year
-    const year = document.getElementById("year");
-    if (year) year.textContent = new Date().getFullYear();
+</main>
 
-    // Mobile nav toggle 
-    const toggle = document.querySelector(".nav-toggle");
-    const menu = document.querySelector(".nav-menu");
-    if (toggle && menu) {
-      toggle.addEventListener("click", () => menu.classList.toggle("active"));
-    }
-  </script>
+<footer>
+  <div class="footer-content">
+    <img src="assets/Logo_transparent.png" alt="TIA Consulting Logo" class="footer-logo">
+
+    <p class="copyright">
+      &copy; <span id="year"></span> TIA Consulting. Technology. Insight. Alignment.
+    </p>
+
+    <div class="footer-socials">
+      <a href="https://www.linkedin.com/in/andietia" target="_blank" aria-label="LinkedIn" class="linkedin-link" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+        <span class="tooltip">Connect with Tia on LinkedIn</span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const cards = Array.from(document.querySelectorAll(".service-detail"));
-
-  function isMobile() {
-    return window.matchMedia("(max-width: 900px)").matches;
-  }
-
-  function closeCard(card) {
-    card.classList.remove("is-open");
-    const btn = card.querySelector(".service-header");
-    const panel = card.querySelector(".service-panel");
-    if (!btn || !panel) return;
-
-    btn.setAttribute("aria-expanded", "false");
-    panel.style.maxHeight = "0px";
-  }
-
-  function openCard(card, { scroll = false } = {}) {
-    // accordion: one open at a time (mobile only)
-    cards.forEach(c => { if (c !== card) closeCard(c); });
-
-    card.classList.add("is-open");
-    const btn = card.querySelector(".service-header");
-    const panel = card.querySelector(".service-panel");
-    if (!btn || !panel) return;
-
-    btn.setAttribute("aria-expanded", "true");
-    panel.style.maxHeight = panel.scrollHeight + "px";
-
-    if (card.id) history.replaceState(null, "", "#" + card.id);
-    if (scroll) card.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-
-  function setDesktopState() {
-    // Desktop: show all panels, reset inline maxHeight so layout is natural
-    cards.forEach(card => {
-      card.classList.add("is-open");
-      const panel = card.querySelector(".service-panel");
-      const btn = card.querySelector(".service-header");
-      if (btn) btn.setAttribute("aria-expanded", "true");
-      if (panel) panel.style.maxHeight = "none";
-    });
-  }
-
-  function setMobileState() {
-    // Mobile: start collapsed, then open hash if present
-    cards.forEach(closeCard);
-    openFromHash();
-  }
-
-  function openFromHash() {
-    if (!isMobile()) return; // only auto-open on mobile
-    const id = window.location.hash.replace("#", "");
-    if (!id) return;
-
-    const card = document.getElementById(id);
-    if (card && card.classList.contains("service-detail")) {
-      openCard(card, { scroll: true });
-    }
-  }
-
-  // Click handlers (only toggle on mobile)
-  document.querySelectorAll(".service-header").forEach(btn => {
-    btn.addEventListener("click", () => {
-      if (!isMobile()) return; // no toggling on desktop
-
-      const card = btn.closest(".service-detail");
-      if (!card) return;
-
-      const isOpen = card.classList.contains("is-open");
-      if (isOpen) closeCard(card);
-      else openCard(card);
-    });
-  });
-
-  // Initialize correct mode
-  function syncMode() {
-    if (isMobile()) setMobileState();
-    else setDesktopState();
-  }
-
-  syncMode();
-
-  // Keep behavior correct when rotating / resizing
-  window.addEventListener("resize", syncMode);
-  window.addEventListener("hashchange", openFromHash);
-
-  // If something affects height after open (fonts/icons), re-measure
-  window.addEventListener("load", () => {
-    if (!isMobile()) return;
-    const openPanel = document.querySelector(".service-detail.is-open .service-panel");
-    if (openPanel) openPanel.style.maxHeight = openPanel.scrollHeight + "px";
-  });
-});
+  document.getElementById("year").textContent = new Date().getFullYear();
+  document.querySelectorAll(".section, footer").forEach(el => el.classList.add("visible"));
 </script>
 
 </body>

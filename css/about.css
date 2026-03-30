@@ -1,0 +1,227 @@
+/* =========================================
+   ABOUT PAGE STYLES
+   about.css
+   ========================================= */
+
+/* HERO */
+.about-hero .services-hero-inner {
+  max-width: 760px;
+}
+
+/* =========================================
+   STORY SECTION
+   ========================================= */
+
+.about-story-section {
+  padding: 72px 0 0;
+}
+
+.about-story-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 72px;
+  align-items: start;
+}
+
+.about-story-img img {
+  width: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+  max-height: 560px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+.about-story-text .eyebrow {
+  color: #888;
+  margin-bottom: 14px;
+}
+
+.about-story-text h2 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  margin-bottom: 22px;
+}
+
+.about-story-text p {
+  color: #333;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin-bottom: 18px;
+}
+
+.about-story-divider {
+  max-width: 1200px;
+  margin: 56px auto 0;
+  padding: 0 40px;
+  border-bottom: 1px solid rgba(232,174,0,0.3);
+}
+
+/* =========================================
+   VALUES SECTION
+   ========================================= */
+
+.about-values-section {
+  padding: 64px 0;
+}
+
+.about-values-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.about-values-header {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.about-values-header h2 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  max-width: 700px;
+  margin: 0 auto 20px;
+}
+
+.about-values-sub {
+  max-width: 660px;
+  margin: 0 auto;
+  color: var(--gray);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.about-value-letter {
+  color: var(--gold-light);
+}
+
+.about-values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.about-value-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 36px 28px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-value-card:hover {
+  border-color: rgba(232,174,0,0.3);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.2);
+}
+
+.about-value-icon {
+  font-size: 1.6rem;
+  color: var(--gold-light);
+  margin-bottom: 18px;
+}
+
+.about-value-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 14px;
+}
+
+.about-value-card p {
+  color: var(--gray);
+  font-size: 1rem;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* =========================================
+   APPROACH SECTION
+   ========================================= */
+
+.about-approach-section {
+  padding: 72px 0;
+}
+
+.about-approach-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.about-approach-text .eyebrow {
+  color: #888;
+  margin-bottom: 14px;
+}
+
+.about-approach-text h2 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  margin-bottom: 22px;
+}
+
+.about-approach-text p {
+  color: #333;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin-bottom: 18px;
+}
+
+.about-approach-img img {
+  width: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+  max-height: 520px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 900px) {
+  .about-story-wrap,
+  .about-approach-wrap {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .about-story-img,
+  .about-approach-img {
+    order: -1;
+  }
+
+  .about-story-img img,
+  .about-approach-img img {
+    max-height: 380px;
+  }
+
+  .about-values-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-story-wrap,
+  .about-approach-wrap,
+  .about-values-wrap {
+    padding: 0 24px;
+  }
+
+  .about-story-divider {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-story-section,
+  .about-approach-section {
+    padding: 52px 0;
+  }
+
+  .about-story-img img,
+  .about-approach-img img {
+    max-height: 300px;
+  }
+}

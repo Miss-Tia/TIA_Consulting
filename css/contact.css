@@ -1,0 +1,212 @@
+/* =========================================
+   CONTACT PAGE STYLES
+   contact.css — contact page only
+   ========================================= */
+
+.contact-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* Keep Calendly from feeling "floating" */
+#booking .calendly-inline-widget {
+  margin-top: 18px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.10);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.10);
+}
+
+/* Form layout */
+.contact-form {
+  margin-top: 26px;
+}
+
+.contact-fields {
+  display: grid;
+  gap: 16px;
+}
+
+/* Labels */
+.contact-label {
+  display: grid;
+  gap: 8px;
+  color: var(--white);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* Inputs */
+.contact-input,
+.contact-textarea {
+  width: 100%;
+  font-family: var(--font-main);
+  font-size: 16px;
+  color: var(--white);
+
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 12px;
+
+  padding: 14px 14px;
+  outline: none;
+
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.contact-textarea {
+  resize: vertical;
+  min-height: 160px;
+}
+
+.contact-input:focus,
+.contact-textarea:focus {
+  border-color: rgba(232,174,0,0.70);
+  box-shadow: 0 0 0 4px rgba(232,174,0,0.18);
+  background: rgba(255,255,255,0.08);
+}
+
+/* Submit area */
+.contact-submit {
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* Email line */
+.contact-email {
+  text-align: center;
+  margin-top: 18px;
+  color: var(--gray);
+}
+
+.contact-email a {
+  color: var(--gold-light);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-email a:hover {
+  text-shadow: 0 0 10px rgba(232,174,0,0.35);
+}
+
+/* Desktop default: hide mobile Calendly button */
+.mobile-calendly-btn {
+  display: none;
+}
+
+#booking .calendly-wrap {
+  height: auto;
+  max-height: none;
+  overflow: hidden;
+  padding-bottom: 24px;
+}
+
+/* =========================================
+   CONTACT PAGE — MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+  .contact-wrap {
+    padding: 0 20px;
+  }
+
+  #booking .calendly-inline-widget {
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  #booking .services-details-wrap {
+    padding: 0 16px;
+  }
+
+  #booking .calendly-inline-widget {
+    width: 100%;
+    height: 920px !important;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  #message .services-details-wrap {
+    padding: 0 16px;
+  }
+
+  .contact-fields {
+    gap: 14px;
+  }
+
+  .contact-label {
+    font-size: 15px;
+  }
+
+  .contact-input,
+  .contact-textarea {
+    font-size: 16px;
+    padding: 12px 12px;
+  }
+
+  .contact-submit .btn {
+    width: 100%;
+    margin: 14px 0 0;
+  }
+}
+
+@media (max-width: 768px) {
+  body.contact-page { padding: 0; }
+
+  body.contact-page .page-hero {
+    padding: 165px 16px 44px;
+    text-align: center;
+  }
+
+  body.contact-page .page-hero-sub { padding: 0 8px; }
+
+  body.contact-page .page-section { padding: 44px 0; }
+
+  body.contact-page .services-details-wrap,
+  body.contact-page .contact-wrap,
+  body.contact-page #message .services-details-wrap {
+    padding-left: calc(16px + env(safe-area-inset-left));
+    padding-right: calc(16px + env(safe-area-inset-right));
+  }
+
+  body.contact-page .calendly-wrap {
+    width: 100%;
+    margin: 18px auto 0;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.10);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.10);
+  }
+
+  body.contact-page .calendly-inline-widget {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 760px !important;
+  }
+
+  body.contact-page .contact-form,
+  body.contact-page .contact-fields,
+  body.contact-page .contact-label,
+  body.contact-page .contact-input,
+  body.contact-page .contact-textarea {
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+
+  /* Hide inline Calendly on mobile, show button instead */
+  body.contact-page .calendly-wrap {
+    display: none !important;
+  }
+
+  body.contact-page .mobile-calendly-btn {
+    display: inline-block;
+    margin: 24px auto 0;
+    text-align: center;
+  }
+
+  body.contact-page #booking.page-section {
+    text-align: center;
+  }
+}

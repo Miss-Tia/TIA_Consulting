@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+  <title>TIA Consulting | Web Development</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/services.css" />
+  <link rel="stylesheet" href="css/process-systems.css" />
+</head>
+
+<body class="services-page">
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html">
+        <img src="assets/Logo_transparent.png" alt="TIA Consulting Logo" class="nav-logo" />
+      </a>
+      <button class="nav-toggle" aria-label="toggle navigation">☰</button>
+      <nav class="nav-menu">
+        <ul class="nav-links">
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="nav-item--dropdown">
+            <div class="nav-dropdown-wrap">
+              <a href="services.html">Services</a>
+              <button class="nav-dropdown-btn" aria-expanded="false" aria-label="Toggle services menu">▾</button>
+            </div>
+            <ul class="nav-dropdown-menu">
+              <li><a href="services.html">All Services</a></li>
+              <li><a href="process-systems.html">Process &amp; Systems</a></li>
+              <li><a href="it-consulting.html">IT Consulting</a></li>
+              <li><a href="web-development.html">Web Development</a></li>
+              <li><a href="automation.html">Automation Solutions</a></li>
+              <li><a href="nationbuilder.html">NationBuilder</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#clients">Clients</a></li>
+          <li class="nav-item--dropdown">
+            <div class="nav-dropdown-wrap">
+              <a href="contact.html">Contact</a>
+              <button class="nav-dropdown-btn" aria-expanded="false" aria-label="Toggle contact menu">&#9662;</button>
+            </div>
+            <ul class="nav-dropdown-menu">
+              <li><a href="contact.html#booking">Book a Consultation</a></li>
+              <li><a href="contact.html#message">Send a Message</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="services-hero ps-hero">
+      <div class="services-hero-inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="services.html">Services</a>
+          <span class="breadcrumb__sep" aria-hidden="true">›</span>
+          <span class="breadcrumb__current">Web Development</span>
+        </nav>
+        <p class="services-kicker">Web Development</p>
+        <h1 class="gold-gradient">A website that works as hard as you do.</h1>
+        <p class="page-hero-sub">
+          Your website should be fast, accessible, easy to maintain, and clear about who you are
+          and what you do. I build sites that meet that bar without the bloat, fragility,
+          or endless maintenance overhead that comes from over-engineered solutions.
+        </p>
+        <div class="services-hero-actions">
+          <a href="https://calendly.com/tia-nationbuilder/consultation" class="btn btn-primary" target="_blank" rel="noopener">
+            Book a Consultation
+          </a>
+          <a href="#packages" class="btn btn-outline">
+            See What's Included
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="page-section light ps-intro-section">
+      <div class="ps-intro-wrap">
+        <div class="ps-intro-text">
+          <p class="eyebrow">The Approach</p>
+          <h2 class="gold-gradient">Built to last. Easy to manage.</h2>
+          <p>
+            Web development at TIA Consulting is about building sites that serve real people like your audience, your staff, and your organization as a whole. That means focusing on the
+            visitors who need information quickly from your site, staff who need to update content without a
+            developer, and organizations that can't afford a fragile build that breaks every time
+            something changes.
+          </p>
+          <p>
+            I prioritize clarity, accessibility, and longevity over novelty. That means clean
+            structure, readable code, and decisions that make sense for your organization's actual
+            capacity to maintain what gets built. No unnecessary frameworks or overbuilt CMS.
+            Just a site that does what it needs to do and keeps doing it.
+          </p>
+        </div>
+        <div class="ps-intro-aside">
+          <div class="ps-stat-block">
+            <p class="ps-stat-number">Accessible</p>
+            <p class="ps-stat-label">built to WCAG standards so everyone can use your site</p>
+          </div>
+          <div class="ps-stat-block">
+            <p class="ps-stat-number">Maintainable</p>
+            <p class="ps-stat-label">you won't need a developer for every content update</p>
+          </div>
+          <div class="ps-stat-block">
+            <p class="ps-stat-number">Performant</p>
+            <p class="ps-stat-label">fast load times across devices and connection speeds</p>
+          </div>
+        </div>
+        <div class="featured-spotlight__divider" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- PACKAGES -->
+    <section class="featured-service-section" id="packages">
+      <div class="featured-service-wrap">
+        <div class="featured-service-intro">
+          <p class="eyebrow">Engagement Options</p>
+          <h2 class="gold-gradient">The right build for where you are.</h2>
+          <p class="featured-copy">
+            Whether you're starting fresh, fixing what you have, or keeping a healthy site running,
+            there's a path that fits your needs.
+          </p>
+        </div>
+
+        <div class="featured-packages">
+
+          <!-- SITE AUDIT -->
+          <div class="featured-package-card ps-package-card">
+            <p class="package-price">From $500</p>
+            <h3>Site Audit</h3>
+            <p>
+              Not sure what's wrong with your current site or whether it's worth fixing?
+              The Site Audit gives you a clear picture of what's working, what's broken, and what
+              would make the biggest difference.
+            </p>
+            <p class="ps-package-detail-label">What's included</p>
+            <ul>
+              <li>Performance, accessibility, and structure review</li>
+              <li>Content clarity and messaging audit</li>
+              <li>Mobile responsiveness check</li>
+              <li>Written report with prioritized recommendations</li>
+              <li>45-minute debrief session</li>
+            </ul>
+            <p class="ps-package-detail-label">Best for</p>
+            <p class="ps-package-note">
+              Organizations unsure whether to fix their current site or start fresh.
+              A clear-eyed starting point with no commitment to more.
+            </p>
+            <a href="https://calendly.com/tia-nationbuilder/consultation" class="spotlight-card__btn" target="_blank" rel="noopener">
+              Start with an Audit
+            </a>
+          </div>
+
+          <!-- NEW WEBSITE BUILD -->
+          <div class="featured-package-card featured-package-card--center ps-package-card">
+            <p class="package-price">From $2,500</p>
+            <h3>New Website Build</h3>
+            <p>
+              A fully designed and built website that is structured for clarity, optimized for
+              performance, and easy for your team to manage after handoff.
+            </p>
+            <p class="ps-package-detail-label">What's included</p>
+            <ul>
+              <li>Discovery and content planning sessions</li>
+              <li>Custom design aligned with your brand</li>
+              <li>Responsive build (mobile, tablet, desktop)</li>
+              <li>Accessibility compliance (WCAG AA)</li>
+              <li>CMS setup if needed</li>
+              <li>Testing across browsers and devices</li>
+              <li>Launch support and 30-day post-launch check-in</li>
+            </ul>
+            <p class="ps-package-detail-label">Best for</p>
+            <p class="ps-package-note">
+              Organizations launching a new site or replacing one that no longer serves them.
+              The most common and complete engagement.
+            </p>
+            <a href="https://calendly.com/tia-nationbuilder/consultation" class="spotlight-card__btn" target="_blank" rel="noopener">
+              Start a Build
+            </a>
+          </div>
+
+          <!-- ONGOING MAINTENANCE -->
+          <div class="featured-package-card ps-package-card">
+            <p class="package-price">From $300/mo</p>
+            <h3>Ongoing Maintenance</h3>
+            <p>
+              A retained monthly plan for keeping your site healthy content updates,
+              security patches, performance monitoring, and a person to call when something breaks.
+            </p>
+            <p class="ps-package-detail-label">What's included</p>
+            <ul>
+              <li>Monthly content updates (up to 2 hours)</li>
+              <li>Security and plugin updates</li>
+              <li>Uptime and performance monitoring</li>
+              <li>Priority turnaround on urgent fixes</li>
+            </ul>
+            <p class="ps-package-detail-label">Best for</p>
+            <p class="ps-package-note">
+              Organizations with a site they like but no internal capacity to keep it
+              current and secure over time.
+            </p>
+            <a href="https://calendly.com/tia-nationbuilder/consultation" class="spotlight-card__btn" target="_blank" rel="noopener">
+              Explore Maintenance
+            </a>
+          </div>
+
+        </div>
+
+        <p class="ps-packages-note">
+          Not sure which fits? <a href="https://calendly.com/tia-nationbuilder/consultation" target="_blank" rel="noopener">Book a free consultation</a> and we'll talk it through.
+        </p>
+        <div class="featured-spotlight__divider" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="page-section light ps-steps-section">
+      <div class="ps-steps-wrap">
+        <div class="ps-steps-header">
+          <p class="eyebrow">The Process</p>
+          <h2 class="gold-gradient">What a build looks like from start to finish.</h2>
+          <p class="ps-steps-sub">
+            Every web project follows the same clear phases with no surprises, and no scope creep.
+          </p>
+        </div>
+
+        <ol class="ps-steps-list">
+          <li class="ps-step">
+            <span class="ps-step-number">01</span>
+            <div class="ps-step-content">
+              <h3>Discovery</h3>
+              <p>We talk through your goals, your audience, your existing site (if any), and what success looks like. I ask a lot of questions here so the build starts with the right foundation.</p>
+            </div>
+          </li>
+          <li class="ps-step">
+            <span class="ps-step-number">02</span>
+            <div class="ps-step-content">
+              <h3>Content &amp; Structure</h3>
+              <p>Before any design happens, we nail down what the site needs to say and how it's organized. Good structure makes everything else easier and prevents expensive revisions later.</p>
+            </div>
+          </li>
+          <li class="ps-step">
+            <span class="ps-step-number">03</span>
+            <div class="ps-step-content">
+              <h3>Design &amp; Build</h3>
+              <p>I design and build in tandem, sharing progress along the way. You're not waiting until the end to see what you're getting.</p>
+            </div>
+          </li>
+          <li class="ps-step">
+            <span class="ps-step-number">04</span>
+            <div class="ps-step-content">
+              <h3>Review &amp; Revisions</h3>
+              <p>You review the full build, give feedback, and we make refinements. Two rounds of revisions are included in every build engagement.</p>
+            </div>
+          </li>
+          <li class="ps-step">
+            <span class="ps-step-number">05</span>
+            <div class="ps-step-content">
+              <h3>Launch &amp; Handoff</h3>
+              <p>I handle the launch, document everything you need to maintain the site, and do a full walkthrough so you're not left guessing how anything works.</p>
+            </div>
+          </li>
+        </ol>
+        <div class="featured-spotlight__divider" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- IS THIS RIGHT FOR YOU -->
+    <section class="page-section dark ps-fit-section">
+      <div class="ps-fit-wrap">
+        <div class="ps-fit-header">
+          <p class="eyebrow" style="color: #888;">Is this right for you?</p>
+          <h2 class="gold-gradient">Built for the right organizations.</h2>
+        </div>
+        <div class="ps-fit-grid">
+          <div class="ps-fit-col ps-fit-yes">
+            <h3><i class="fa-solid fa-circle-check" aria-hidden="true"></i> A good fit if&hellip;</h3>
+            <ul>
+              <li>Your current site is hard to update, slow, or embarrassing to share</li>
+              <li>You need a reliable public presence but don't have a developer on staff</li>
+              <li>Accessibility and long-term maintainability matter to your organization</li>
+              <li>You want clean, documented work </li>
+              <li>You value a site that's built to be understood, not just to impress</li>
+            </ul>
+          </div>
+          <div class="ps-fit-col ps-fit-no">
+            <h3><i class="fa-solid fa-circle-xmark" aria-hidden="true"></i> May not be the right fit if&hellip;</h3>
+            <ul>
+              <li>You need a large-scale enterprise platform</li>
+              <li>You want heavy animation and trend-driven design over clarity and function</li>
+              <li>You're looking for the lowest possible price with no regard for quality</li>
+              <li>Your goals involve deception, harm, or targeting any group of people</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="page-section dark services-final-cta">
+      <div class="page-shell services-final-cta__inner">
+        <h2 class="gold-gradient">Ready to build something worth sharing?</h2>
+        <p>
+          Start with a free consultation. I'll look at where you are, what you need,
+          and whether we're the right fit.
+        </p>
+        <a href="https://calendly.com/tia-nationbuilder/consultation" class="btn btn-primary" target="_blank" rel="noopener">
+          Book a Free Consultation
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <img src="assets/Logo_transparent.png" alt="TIA Consulting Logo" class="footer-logo" />
+      <p class="copyright">
+        &copy; <span id="year"></span> TIA Consulting. Technology. Insight. Alignment.
+      </p>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/andietia" target="_blank" aria-label="LinkedIn" class="linkedin-link" rel="noopener">
+          <i class="fab fa-linkedin"></i>
+          <span class="tooltip">Connect with Tia on LinkedIn</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.querySelectorAll(".section, footer").forEach(el => el.classList.add("visible"));
+  </script>
+
+</body>
+</html>
